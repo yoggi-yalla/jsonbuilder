@@ -1,5 +1,9 @@
+DS_Store
+
 .pytest_cache/
 __pycache__/
+__init__pyc
+
+*.egg-info
+
 testgiant.csv
-out.json
-testfull_big.csv

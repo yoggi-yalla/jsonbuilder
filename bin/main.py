@@ -1,8 +1,9 @@
-from jb import jsonbuilder
 import argparse
-import time
 import json
 import logging
+import time
+
+from jsonbuilder import jsonbuilder
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--format")
@@ -16,8 +17,12 @@ parser.add_argument("-v", "--verbose", action="store_true")
 args = parser.parse_args()
 
 """
-Run this script in command line from the project root dir:
-python main.py -t jb/testdata/test_sandbox.csv -f jb/testdata/format_sandbox.json -v
+To run this script you must first install the project. 
+Go to the project root directory and enter:
+pip install -e .
+
+You can then run the main function in this tool as:
+python3 main.py -t sample_table.csv -f sample_format.json -v
 """
 
 
