@@ -61,7 +61,6 @@ def main():
     with open("format.json", "w") as out:
         out.write(output)
 
-
 def analyze(node, mapping):
     if type(node) == dict:
         mapping = analyze_obj(node, mapping)
@@ -82,9 +81,7 @@ def analyze_arr(node, mapping):
     mapping["children"] = []
     for child in node:
         child_mapping = analyze(child, {})
-        if not mapping["children"]:
-            mapping["children"].append(child_mapping)
-        elif not any([x == child_mapping for x in mapping["children"]]):
+        if not any([x == child_mapping for x in mapping["children"]]):
             mapping["children"].append(child_mapping)
     return mapping
 
